@@ -408,11 +408,10 @@ contract NttManager is INttManager, RateLimiter, ManagerBase {
             // transfer tokens
             IERC20(token).safeTransferFrom(msg.sender, address(this), amount);
 
-            // query own token balance after transfer
-            uint256 balanceAfter = _getTokenBalanceOf(token, address(this));
+            // We removed the calculation of the amount as MEZO is not a fee-on-transfer token.
+            // Amount transferred is equal to the amount received.
+            // This change was driven to limit the number of calls to MEZO precompile.
 
-            // correct amount for potential transfer fees
-            amount = balanceAfter - balanceBefore;
             if (mode == Mode.BURNING) {
                 {
                     // NOTE: We don't account for burn fees in this code path.
@@ -650,15 +649,16 @@ contract NttManager is INttManager, RateLimiter, ManagerBase {
         IERC20(token).safeTransfer(recipient, untrimmedAmount);
     }
 
-    function tokenDecimals() public view override(INttManager, RateLimiter) returns (uint8) {
-        (bool success, bytes memory queriedDecimals) =
-            token.staticcall(abi.encodeWithSignature("decimals()"));
-
-        if (!success) {
-            revert StaticcallFailed();
-        }
-
-        return abi.decode(queriedDecimals, (uint8));
+    function tokenDecimals() public pure override(INttManager, RateLimiter) returns (uint8) {
+        // Notes:
+        // - MEZO is a 18 decimals token. This hardcoded value is used to limit
+        //   the number of calls to MEZO precomile.
+        //   See: https://github.com/mezo-org/mezod/blob/cf2d3985b078c9a9d2cdce79a604fd65037038f6/precompile/mezotoken/mezotoken.go#L29
+        // - For some reason the below code creates less bytecode than simply returning 18.
+        //   This contract is on the edge of the bytecode size limit, hence this
+        //   workaround is used.
+        bytes memory encodedQueriedDecimals = abi.encode(uint8(18));
+        return abi.decode(encodedQueriedDecimals, (uint8));
     }
 
     // ==================== Internal Helpers ===============================================
