@@ -5,7 +5,7 @@
       "version": "1.3.1",
       "mode": "locking",
       "paused": false,
-      "owner": "0x123694886DBf5Ac94DDA07135349534536D14cAf",
+      "owner": "0x98D8899c3030741925BE630C710A98B57F397C7a",
       "manager": "0x5E668D912F69db0762CD0fE00647dA9fa6b29591",
       "token": "0x7B7c000000000000000000000000000000000001",
       "transceivers": {
@@ -23,14 +23,14 @@
           "Bsc": "50000000.000000000000000000"
         }
       },
-      "pauser": "0x123694886DBf5Ac94DDA07135349534536D14cAf",
+      "pauser": "0x40C7b9612B394212394EA860cACd0e176CA4Ae5B",
       "managerVariant": "standard"
     },
     "Ethereum": {
       "version": "1.3.1",
       "mode": "burning",
       "paused": false,
-      "owner": "0x123694886DBf5Ac94DDA07135349534536D14cAf",
+      "owner": "0x98D8899c3030741925BE630C710A98B57F397C7a",
       "manager": "0x13916D0daB357DCBAa1600b594d62C641840686A",
       "token": "0x8e4cbBcc33dB6c0a18561fDE1F6bA35906d4848b",
       "transceivers": {
@@ -48,14 +48,14 @@
           "Bsc": "50000000.000000000000000000"
         }
       },
-      "pauser": "0x123694886DBf5Ac94DDA07135349534536D14cAf",
+      "pauser": "0x40C7b9612B394212394EA860cACd0e176CA4Ae5B",
       "managerVariant": "standard"
     },
     "Base": {
       "version": "1.3.1",
       "mode": "burning",
       "paused": false,
-      "owner": "0x123694886DBf5Ac94DDA07135349534536D14cAf",
+      "owner": "0x98D8899c3030741925BE630C710A98B57F397C7a",
       "manager": "0x0c46f496C410465975a427e34a976fc15a2edE4f",
       "token": "0x8e4cbBcc33dB6c0a18561fDE1F6bA35906d4848b",
       "transceivers": {
@@ -73,14 +73,14 @@
           "Bsc": "50000000.000000000000000000"
         }
       },
-      "pauser": "0x123694886DBf5Ac94DDA07135349534536D14cAf",
+      "pauser": "0x40C7b9612B394212394EA860cACd0e176CA4Ae5B",
       "managerVariant": "standard"
     },
     "Bsc": {
       "version": "1.3.1",
       "mode": "burning",
       "paused": false,
-      "owner": "0x123694886DBf5Ac94DDA07135349534536D14cAf",
+      "owner": "0x98D8899c3030741925BE630C710A98B57F397C7a",
       "manager": "0x09959798B95d00a3183d20FaC298E4594E599eab",
       "token": "0x8e4cbBcc33dB6c0a18561fDE1F6bA35906d4848b",
       "transceivers": {
@@ -98,7 +98,7 @@
           "Mezo": "50000000.000000000000000000"
         }
       },
-      "pauser": "0x123694886DBf5Ac94DDA07135349534536D14cAf", 
+      "pauser": "0x40C7b9612B394212394EA860cACd0e176CA4Ae5B",
       "managerVariant": "standard"
     }
   }
